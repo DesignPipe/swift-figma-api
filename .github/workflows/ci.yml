@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  macos:
+    runs-on: macos-15
+    env:
+      DEVELOPER_DIR: "/Applications/Xcode_26.1.1.app/Contents/Developer"
+    steps:
+      - uses: actions/checkout@v6
+      - name: Show Swift version
+        run: swift --version
+      - name: Build
+        run: swift build
+      - name: Test
+        run: swift test
+
+  linux:
+    runs-on: ubuntu-latest
+    container: swift:6.2.3-jammy
+    steps:
+      - uses: actions/checkout@v6
+      - name: Show Swift version
+        run: swift --version
+      - name: Build tests
+        run: swift build --build-tests
+      - name: Test
+        run: swift test --skip-build --parallel
