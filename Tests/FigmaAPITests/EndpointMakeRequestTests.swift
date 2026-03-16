@@ -11,8 +11,7 @@ final class EndpointMakeRequestTests: XCTestCase {
     // MARK: - Valid Base URL (happy path)
 
     func testImageEndpointMakeRequestSucceeds() throws {
-        // swiftlint:disable:next force_unwrapping
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
+        let baseURL = FigmaClient.baseURL
         let endpoint = ImageEndpoint(fileId: "abc123", nodeIds: ["1:2"], params: SVGParams())
 
         let request = try endpoint.makeRequest(baseURL: baseURL)
@@ -22,8 +21,7 @@ final class EndpointMakeRequestTests: XCTestCase {
     }
 
     func testNodesEndpointMakeRequestSucceeds() throws {
-        // swiftlint:disable:next force_unwrapping
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
+        let baseURL = FigmaClient.baseURL
         let endpoint = NodesEndpoint(fileId: "abc123", nodeIds: ["1:2", "3:4"])
 
         let request = try endpoint.makeRequest(baseURL: baseURL)
@@ -33,8 +31,7 @@ final class EndpointMakeRequestTests: XCTestCase {
     }
 
     func testFileMetadataEndpointMakeRequestSucceeds() throws {
-        // swiftlint:disable:next force_unwrapping
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
+        let baseURL = FigmaClient.baseURL
         let endpoint = FileMetadataEndpoint(fileId: "abc123")
 
         let request = try endpoint.makeRequest(baseURL: baseURL)
