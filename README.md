@@ -1,5 +1,10 @@
 # swift-figma-api
 
+[![CI](https://github.com/DesignPipe/swift-figma-api/actions/workflows/ci.yml/badge.svg)](https://github.com/DesignPipe/swift-figma-api/actions/workflows/ci.yml)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FDesignPipe%2Fswift-figma-api%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/DesignPipe/swift-figma-api)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FDesignPipe%2Fswift-figma-api%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/DesignPipe/swift-figma-api)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/DesignPipe/swift-figma-api/blob/main/LICENSE)
+
 A Swift client for the [Figma REST API](https://www.figma.com/developers/api) with async/await, rate limiting, and automatic retry with exponential backoff.
 
 ## Features
