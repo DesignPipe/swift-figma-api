@@ -1,0 +1,11 @@
+{
+    "links_updated": [
+        {
+            "id": "res1",
+            "name": "Updated Name",
+            "url": "https://new.example.com",
+            "node_id": "10:1",
+            "dev_status": "completed"
+        }
+    ]
+}

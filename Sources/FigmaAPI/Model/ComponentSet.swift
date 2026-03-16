@@ -1,4 +1,4 @@
-public struct ComponentSet: Codable, Sendable {
+public struct ComponentSet: Decodable, Sendable {
     public let key: String
     public let nodeId: String
     public let name: String

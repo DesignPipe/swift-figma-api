@@ -1,4 +1,4 @@
-public struct DevResource: Codable, Sendable {
+public struct DevResource: Decodable, Sendable {
     public let id: String
     public let name: String
     public let url: String

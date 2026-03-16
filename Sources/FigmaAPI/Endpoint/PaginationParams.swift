@@ -5,6 +5,9 @@ public struct PaginationParams: Sendable {
     public let cursor: String?
 
     public init(pageSize: Int? = nil, cursor: String? = nil) {
+        if let pageSize {
+            precondition(pageSize > 0, "pageSize must be positive")
+        }
         self.pageSize = pageSize
         self.cursor = cursor
     }

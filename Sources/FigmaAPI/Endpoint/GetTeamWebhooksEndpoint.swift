@@ -3,7 +3,6 @@ import Foundation
     import FoundationNetworking
 #endif
 
-@available(*, deprecated, message: "Use GetWebhooksEndpoint instead")
 public struct GetTeamWebhooksEndpoint: BaseEndpoint {
     public typealias Content = [Webhook]
 

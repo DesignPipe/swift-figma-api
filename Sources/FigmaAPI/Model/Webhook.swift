@@ -1,4 +1,4 @@
-public struct Webhook: Codable, Sendable {
+public struct Webhook: Decodable, Sendable {
     public let id: String
     public let teamId: String
     public let eventType: String

@@ -9,12 +9,33 @@ final class GetActivityLogsEndpointTests: XCTestCase {
         let endpoint = GetActivityLogsEndpoint()
         let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
-        let request = endpoint.makeRequest(baseURL: baseURL)
+        let request = try endpoint.makeRequest(baseURL: baseURL)
 
         XCTAssertEqual(
             request.url?.absoluteString,
             "https://api.figma.com/v1/activity_logs"
         )
+    }
+
+    func testMakeRequestWithFilters() throws {
+        let endpoint = GetActivityLogsEndpoint(
+            events: "FILE_OPEN,FILE_DELETE",
+            startTime: 1704067200.0,
+            endTime: 1706745599.0,
+            limit: 50,
+            order: "desc"
+        )
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
+
+        let request = try endpoint.makeRequest(baseURL: baseURL)
+
+        let components = try XCTUnwrap(URLComponents(url: try XCTUnwrap(request.url), resolvingAgainstBaseURL: false))
+        let queryItems = try XCTUnwrap(components.queryItems)
+        XCTAssertEqual(queryItems.first(where: { $0.name == "events" })?.value, "FILE_OPEN,FILE_DELETE")
+        XCTAssertNotNil(queryItems.first(where: { $0.name == "start_time" }))
+        XCTAssertNotNil(queryItems.first(where: { $0.name == "end_time" }))
+        XCTAssertEqual(queryItems.first(where: { $0.name == "limit" })?.value, "50")
+        XCTAssertEqual(queryItems.first(where: { $0.name == "order" })?.value, "desc")
     }
 
     // MARK: - Response Parsing

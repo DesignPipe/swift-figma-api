@@ -52,11 +52,21 @@ final class PostReactionEndpointTests: XCTestCase {
     // MARK: - Response Parsing
 
     func testContentParsesEmptyResponse() throws {
-        let data = Data("{}".utf8)
+        let data = Data("{\"status\": 200, \"error\": false}".utf8)
         let body = PostReactionBody(emoji: "👍")
         let endpoint = PostReactionEndpoint(fileId: "test", commentId: "c1", body: body)
         let response = try endpoint.content(from: nil, with: data)
 
         XCTAssertNotNil(response)
+    }
+
+    // MARK: - Error Handling
+
+    func testContentThrowsOnInvalidJSON() {
+        let invalidData = Data("invalid".utf8)
+        let body = PostReactionBody(emoji: "👍")
+        let endpoint = PostReactionEndpoint(fileId: "test", commentId: "c1", body: body)
+
+        XCTAssertThrowsError(try endpoint.content(from: nil, with: invalidData))
     }
 }

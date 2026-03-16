@@ -27,12 +27,19 @@ final class DeleteCommentEndpointTests: XCTestCase {
 
     // MARK: - Response Parsing
 
-    func testContentParsesEmptyResponse() throws {
+    func testContentParsesEmptyBody() throws {
+        let data = Data()
+        let endpoint = DeleteCommentEndpoint(fileId: "test", commentId: "c1")
+        let response = try endpoint.content(from: nil, with: data)
+
+        XCTAssertNotNil(response)
+    }
+
+    func testContentParsesEmptyJSONBody() throws {
         let data = Data("{}".utf8)
         let endpoint = DeleteCommentEndpoint(fileId: "test", commentId: "c1")
         let response = try endpoint.content(from: nil, with: data)
 
-        // EmptyResponse just needs to decode without error
         XCTAssertNotNil(response)
     }
 }

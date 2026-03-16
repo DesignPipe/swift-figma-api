@@ -1,4 +1,5 @@
 import Foundation
+import YYJSON
 #if canImport(FoundationNetworking)
     import FoundationNetworking
 #endif
@@ -20,5 +21,10 @@ public struct DeleteWebhookEndpoint: BaseEndpoint {
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         return request
+    }
+
+    public func content(from _: URLResponse?, with body: Data) throws -> EmptyResponse {
+        if body.isEmpty { return EmptyResponse() }
+        return try YYJSONDecoder().decode(EmptyResponse.self, from: body)
     }
 }

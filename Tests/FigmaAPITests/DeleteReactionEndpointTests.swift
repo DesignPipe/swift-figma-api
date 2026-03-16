@@ -38,7 +38,15 @@ final class DeleteReactionEndpointTests: XCTestCase {
 
     // MARK: - Response Parsing
 
-    func testContentParsesEmptyResponse() throws {
+    func testContentParsesEmptyBody() throws {
+        let data = Data()
+        let endpoint = DeleteReactionEndpoint(fileId: "test", commentId: "c1", emoji: "👍")
+        let response = try endpoint.content(from: nil, with: data)
+
+        XCTAssertNotNil(response)
+    }
+
+    func testContentParsesEmptyJSONBody() throws {
         let data = Data("{}".utf8)
         let endpoint = DeleteReactionEndpoint(fileId: "test", commentId: "c1", emoji: "👍")
         let response = try endpoint.content(from: nil, with: data)

@@ -1,4 +1,4 @@
-public struct FileVersion: Codable, Sendable {
+public struct FileVersion: Decodable, Sendable {
     public let id: String
     public let createdAt: String
     public let label: String?

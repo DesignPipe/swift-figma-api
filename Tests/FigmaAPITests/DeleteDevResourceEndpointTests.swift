@@ -27,7 +27,15 @@ final class DeleteDevResourceEndpointTests: XCTestCase {
 
     // MARK: - Response Parsing
 
-    func testContentParsesEmptyResponse() throws {
+    func testContentParsesEmptyBody() throws {
+        let data = Data()
+        let endpoint = DeleteDevResourceEndpoint(fileId: "test", resourceId: "res1")
+        let response = try endpoint.content(from: nil, with: data)
+
+        XCTAssertNotNil(response)
+    }
+
+    func testContentParsesEmptyJSONBody() throws {
         let data = Data("{}".utf8)
         let endpoint = DeleteDevResourceEndpoint(fileId: "test", resourceId: "res1")
         let response = try endpoint.content(from: nil, with: data)

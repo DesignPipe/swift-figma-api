@@ -2,6 +2,10 @@ import CustomDump
 @testable import FigmaAPI
 import XCTest
 
+#if canImport(FoundationNetworking)
+    import FoundationNetworking
+#endif
+
 final class GetFileMetaEndpointTests: XCTestCase {
     // MARK: - URL Construction
 
@@ -28,6 +32,7 @@ final class GetFileMetaEndpointTests: XCTestCase {
 
     // MARK: - Response Parsing
 
+    #if !canImport(FoundationNetworking)
     func testContentExtractsHeaderValues() throws {
         let endpoint = GetFileMetaEndpoint(fileId: "abc123")
         let url = try XCTUnwrap(URL(string: "https://api.figma.com/v1/files/abc123"))
@@ -53,4 +58,5 @@ final class GetFileMetaEndpointTests: XCTestCase {
 
         XCTAssertThrowsError(try endpoint.content(from: response, with: Data()))
     }
+    #endif
 }
