@@ -1,0 +1,18 @@
+{
+    "dev_resources": [
+        {
+            "id": "res1",
+            "name": "Storybook",
+            "url": "https://storybook.example.com/button",
+            "node_id": "10:1",
+            "dev_status": "ready_for_dev"
+        },
+        {
+            "id": "res2",
+            "name": "GitHub PR",
+            "url": "https://github.com/example/repo/pull/123",
+            "node_id": "10:2",
+            "dev_status": null
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "links_created": [
+        {
+            "id": "res3",
+            "name": "New Resource",
+            "url": "https://example.com/resource",
+            "node_id": "15:1",
+            "dev_status": "in_progress"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "meta": {
+        "key": "cs_key_456",
+        "node_id": "20:1",
+        "name": "Button",
+        "description": "Button component set with variants",
+        "containing_frame": {
+            "node_id": "1:1",
+            "name": "Buttons",
+            "page_id": "0:1",
+            "page_name": "Components",
+            "background_color": null,
+            "containing_component_set": null
+        }
+    }
+}

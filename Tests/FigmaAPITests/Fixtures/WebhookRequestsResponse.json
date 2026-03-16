@@ -1,0 +1,21 @@
+{
+    "requests": [
+        {
+            "id": "req1",
+            "endpoint": "https://example.com/webhook",
+            "payload": {
+                "event_type": "FILE_UPDATE",
+                "timestamp": "2024-01-15T10:30:00Z"
+            },
+            "error": null,
+            "created_at": "2024-01-15T10:30:01Z"
+        },
+        {
+            "id": "req2",
+            "endpoint": "https://example.com/webhook",
+            "payload": null,
+            "error": "Connection timeout",
+            "created_at": "2024-01-15T11:00:00Z"
+        }
+    ]
+}

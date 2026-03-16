@@ -81,6 +81,7 @@ public struct ImageEndpoint: BaseEndpoint {
 
     public func makeRequest(baseURL: URL) throws -> URLRequest {
         let url = baseURL
+            .appendingPathComponent("v1")
             .appendingPathComponent("images")
             .appendingPathComponent(fileId)
 

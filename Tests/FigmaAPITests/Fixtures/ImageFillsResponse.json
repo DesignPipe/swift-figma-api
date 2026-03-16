@@ -1,0 +1,8 @@
+{
+    "meta": {
+        "images": {
+            "0:1": "https://s3-alpha.figma.com/img/abc/123/image1.png",
+            "0:2": "https://s3-alpha.figma.com/img/def/456/image2.png"
+        }
+    }
+}

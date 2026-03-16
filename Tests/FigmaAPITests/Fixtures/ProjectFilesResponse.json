@@ -1,0 +1,16 @@
+{
+    "files": [
+        {
+            "key": "file1",
+            "name": "Components",
+            "thumbnail_url": "https://example.com/thumb1.png",
+            "last_modified": "2024-01-15T10:30:00Z"
+        },
+        {
+            "key": "file2",
+            "name": "Icons",
+            "thumbnail_url": null,
+            "last_modified": "2024-02-20T14:00:00Z"
+        }
+    ]
+}

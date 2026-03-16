@@ -1,0 +1,11 @@
+{
+    "id": "wh1",
+    "team_id": "team123",
+    "event_type": "FILE_UPDATE",
+    "client_id": null,
+    "endpoint": "https://example.com/webhook",
+    "passcode": "secret123",
+    "status": "ACTIVE",
+    "description": "File update webhook",
+    "protocol_version": "2"
+}
