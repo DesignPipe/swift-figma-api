@@ -9,10 +9,11 @@ A Swift client for the [Figma REST API](https://www.figma.com/developers/api) wi
 
 ## Features
 
-- 8 Figma API endpoints (files, components, nodes, images, styles, variables)
+- Full Figma REST API coverage (46 endpoints) — files, components, styles, variables, comments, webhooks, dev resources, analytics, and more
 - Token-bucket rate limiting with fair round-robin scheduling
 - Exponential backoff retry with jitter and `Retry-After` support
-- Figma Variables API (read + write codeSyntax)
+- Figma Variables API (read local, read published, write codeSyntax)
+- Support for both API v1 and v2 (webhooks)
 - GitHub Releases endpoint (for version checking)
 - Swift 6 strict concurrency
 
@@ -47,12 +48,18 @@ Then add `FigmaAPI` to your target dependencies:
 ```swift
 import FigmaAPI
 
-// Create a client with your Figma personal access token
+// Create a client
+let figma = FigmaClient(accessToken: "your-figma-token", timeout: nil)
+
+// Wrap with rate limiting and retry
+let rateLimiter = SharedRateLimiter()
 let client = RateLimitedClient(
-    inner: FigmaClient(accessToken: "your-figma-token")
+    client: figma,
+    rateLimiter: rateLimiter,
+    configID: "default"
 )
 
-// Fetch components
+// Fetch components from a file
 let components = try await client.request(
     ComponentsEndpoint(fileId: "your-file-id")
 )
@@ -64,8 +71,22 @@ let variables = try await client.request(
 
 // Export images as SVG
 let images = try await client.request(
-    ImageEndpoint(fileId: "your-file-id", nodeIds: ["1:2", "3:4"], format: .svg)
+    ImageEndpoint(fileId: "your-file-id", nodeIds: ["1:2", "3:4"], params: SVGParams())
 )
+
+// Get current user
+let me = try await client.request(GetMeEndpoint())
+
+// Post a comment
+let comment = try await client.request(
+    PostCommentEndpoint(
+        fileId: "your-file-id",
+        body: PostCommentBody(message: "Looks great!")
+    )
+)
+
+// List webhooks (v2 API)
+let webhooks = try await client.request(GetWebhooksEndpoint())
 ```
 
 ## License

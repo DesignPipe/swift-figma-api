@@ -8,7 +8,7 @@ final class UpdateVariablesEndpointTests: XCTestCase {
         let body = VariablesUpdateRequest(variables: [])
         let endpoint = UpdateVariablesEndpoint(fileId: "abc123", body: body)
         // swiftlint:disable:next force_unwrapping
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/v1/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
         let request = try endpoint.makeRequest(baseURL: baseURL)
 
@@ -22,7 +22,7 @@ final class UpdateVariablesEndpointTests: XCTestCase {
         let body = VariablesUpdateRequest(variables: [])
         let endpoint = UpdateVariablesEndpoint(fileId: "test", body: body)
         // swiftlint:disable:next force_unwrapping
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/v1/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
         let request = try endpoint.makeRequest(baseURL: baseURL)
 
@@ -33,7 +33,7 @@ final class UpdateVariablesEndpointTests: XCTestCase {
         let body = VariablesUpdateRequest(variables: [])
         let endpoint = UpdateVariablesEndpoint(fileId: "test", body: body)
         // swiftlint:disable:next force_unwrapping
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/v1/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
         let request = try endpoint.makeRequest(baseURL: baseURL)
 
@@ -48,7 +48,7 @@ final class UpdateVariablesEndpointTests: XCTestCase {
         let body = VariablesUpdateRequest(variables: [update])
         let endpoint = UpdateVariablesEndpoint(fileId: "test", body: body)
         // swiftlint:disable:next force_unwrapping
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/v1/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
         let request = try endpoint.makeRequest(baseURL: baseURL)
 

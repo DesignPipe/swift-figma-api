@@ -7,7 +7,7 @@ final class ComponentsEndpointTests: XCTestCase {
 
     func testMakeRequestConstructsCorrectURL() throws {
         let endpoint = ComponentsEndpoint(fileId: "abc123")
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/v1/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
         let request = endpoint.makeRequest(baseURL: baseURL)
 

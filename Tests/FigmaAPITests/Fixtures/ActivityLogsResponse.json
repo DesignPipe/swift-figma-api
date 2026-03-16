@@ -1,0 +1,20 @@
+{
+    "activity_logs": [
+        {
+            "id": "log1",
+            "timestamp": "2024-01-15T10:30:00Z",
+            "actor_id": "user1",
+            "action_type": "FILE_OPEN",
+            "entity_type": "FILE",
+            "details": {"file_key": "abc123"}
+        },
+        {
+            "id": "log2",
+            "timestamp": "2024-01-15T11:00:00Z",
+            "actor_id": null,
+            "action_type": "FILE_DELETE",
+            "entity_type": "FILE",
+            "details": null
+        }
+    ]
+}

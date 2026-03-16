@@ -7,7 +7,7 @@ final class StylesEndpointTests: XCTestCase {
 
     func testMakeRequestConstructsCorrectURL() throws {
         let endpoint = StylesEndpoint(fileId: "abc123")
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/v1/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
         let request = endpoint.makeRequest(baseURL: baseURL)
 
@@ -19,7 +19,7 @@ final class StylesEndpointTests: XCTestCase {
 
     func testMakeRequestWithSpecialCharactersInFileId() throws {
         let endpoint = StylesEndpoint(fileId: "file-with-dashes")
-        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/v1/"))
+        let baseURL = try XCTUnwrap(URL(string: "https://api.figma.com/"))
 
         let request = endpoint.makeRequest(baseURL: baseURL)
 

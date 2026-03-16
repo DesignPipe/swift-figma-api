@@ -1,0 +1,40 @@
+{
+    "comments": [
+        {
+            "id": "comment1",
+            "message": "Great design!",
+            "created_at": "2024-01-15T10:30:00Z",
+            "resolved_at": null,
+            "user": {
+                "id": "user1",
+                "handle": "Designer",
+                "email": "designer@example.com",
+                "img_url": "https://example.com/avatar1.png"
+            },
+            "order_id": "1",
+            "parent_id": null,
+            "client_meta": {
+                "node_id": "10:1",
+                "node_offset": {
+                    "x": 100.0,
+                    "y": 200.0
+                }
+            }
+        },
+        {
+            "id": "comment2",
+            "message": "I agree!",
+            "created_at": "2024-01-15T11:00:00Z",
+            "resolved_at": "2024-01-16T09:00:00Z",
+            "user": {
+                "id": "user2",
+                "handle": "Developer",
+                "email": null,
+                "img_url": null
+            },
+            "order_id": "2",
+            "parent_id": "comment1",
+            "client_meta": null
+        }
+    ]
+}

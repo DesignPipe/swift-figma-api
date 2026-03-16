@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "variableCollections": {
+      "VariableCollectionId:2:1": {
+        "defaultModeId": "2:0",
+        "id": "VariableCollectionId:2:1",
+        "name": "Published Colors",
+        "modes": [
+          { "modeId": "2:0", "name": "Default" }
+        ],
+        "variableIds": [
+          "VariableID:2:2"
+        ]
+      }
+    },
+    "variables": {
+      "VariableID:2:2": {
+        "id": "VariableID:2:2",
+        "name": "brand/primary",
+        "variableCollectionId": "VariableCollectionId:2:1",
+        "valuesByMode": {
+          "2:0": { "r": 0.0, "g": 0.5, "b": 1.0, "a": 1.0 }
+        },
+        "description": "Primary brand color"
+      }
+    }
+  }
+}

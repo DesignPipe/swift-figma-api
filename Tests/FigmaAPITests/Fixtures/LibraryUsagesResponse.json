@@ -1,0 +1,13 @@
+{
+    "usages": [
+        {
+            "component_key": "comp1",
+            "component_name": "Button",
+            "style_key": null,
+            "style_name": null,
+            "variable_key": null,
+            "variable_name": null,
+            "usage_count": 150
+        }
+    ]
+}

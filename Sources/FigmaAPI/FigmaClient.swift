@@ -5,7 +5,7 @@ import Foundation
 
 public final class FigmaClient: BaseClient, @unchecked Sendable {
     // swiftlint:disable:next force_unwrapping
-    private static let figmaBaseURL = URL(string: "https://api.figma.com/v1/")!
+    private static let figmaBaseURL = URL(string: "https://api.figma.com/")!
 
     public init(accessToken: String, timeout: TimeInterval?) {
         let config = URLSessionConfiguration.ephemeral

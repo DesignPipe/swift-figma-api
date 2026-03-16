@@ -18,6 +18,7 @@ public struct VariablesEndpoint: BaseEndpoint {
 
     public func makeRequest(baseURL: URL) -> URLRequest {
         let url = baseURL
+            .appendingPathComponent("v1")
             .appendingPathComponent("files")
             .appendingPathComponent(fileId)
             .appendingPathComponent("variables")

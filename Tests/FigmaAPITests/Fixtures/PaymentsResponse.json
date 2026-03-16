@@ -1,0 +1,13 @@
+{
+    "status": 200,
+    "users": [
+        {
+            "user_id": "user1",
+            "status": "active"
+        },
+        {
+            "user_id": "user2",
+            "status": "inactive"
+        }
+    ]
+}
