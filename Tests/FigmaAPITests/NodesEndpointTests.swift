@@ -106,7 +106,7 @@ final class NodesEndpointTests: XCTestCase {
     }
 
     func testNonSolidPaintReturnsNil() {
-        let paint = Paint(type: .gradientLinear, blendMode: nil, opacity: 1.0, color: nil, gradientStops: nil)
+        let paint = Paint(type: .gradientLinear, blendMode: nil, opacity: 1.0, color: nil, gradientStops: nil, boundVariables: nil)
         XCTAssertNil(paint.asSolid)
     }
 

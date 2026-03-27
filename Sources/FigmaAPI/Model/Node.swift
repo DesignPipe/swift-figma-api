@@ -140,6 +140,7 @@ public struct Paint: Decodable, Sendable {
     public let opacity: Double?
     public let color: PaintColor?
     public let gradientStops: [GradientStop]?
+    public let boundVariables: [String: VariableAlias]?
 
     public var asSolid: SolidPaint? {
         SolidPaint(self)
