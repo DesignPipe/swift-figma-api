@@ -59,6 +59,14 @@ public struct Document: Decodable, Sendable {
     public let rotation: Double?
     public let children: [Document]?
     public let style: TypeStyle?
+
+    /// An array of paths representing the object fill.
+    /// Only present when `geometry=paths` is passed to the Nodes endpoint.
+    public let fillGeometry: [VectorPath]?
+
+    /// An array of paths representing the object stroke.
+    /// Only present when `geometry=paths` is passed to the Nodes endpoint.
+    public let strokeGeometry: [VectorPath]?
 }
 
 // MARK: - Stroke Enums
